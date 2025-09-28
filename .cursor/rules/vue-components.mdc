@@ -1,0 +1,34 @@
+---
+globs: **/*.vue
+alwaysApply: false
+---
+# Vue 3 Component Guidelines
+
+## Component Structure
+- Always use `<script setup lang="ts">` for Vue components
+- Use Composition API exclusively; avoid Options API
+- Structure files: exported component, composables, helpers, static content, types
+
+## Naming Conventions
+- Use PascalCase for component names (e.g., `AuthWizard.vue`)
+- Use lowercase with dashes for directories (e.g., `components/auth-wizard`)
+- Use kebab-case for pages and layouts (e.g., `user-profile.vue`)
+
+## TypeScript Integration
+- Use TypeScript for all component code
+- Prefer types over interfaces
+- Avoid enums; use const objects instead
+- Leverage Nuxt's auto-imports for components, composables, and utilities
+
+## Composition API Best Practices
+- Use `<script setup lang="ts">` syntax for concise component definitions
+- Leverage `ref`, `reactive`, and `computed` for reactive state management
+- Use `provide/inject` for dependency injection when appropriate
+- Implement custom composables for reusable logic
+- Use `watchEffect` and `watch` for side effects
+
+## Template Guidelines
+- Use template syntax for declarative rendering
+- Prefer NuxtUI components over custom implementations
+- Use Tailwind CSS for styling with mobile-first approach
+- Implement proper accessibility attributes

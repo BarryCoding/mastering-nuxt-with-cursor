@@ -1,0 +1,44 @@
+---
+description: UI styling and NuxtUI component guidelines
+globs: ["**/*.vue", "**/*.css", "**/assets/**/*"]
+alwaysApply: false
+---
+
+# UI and Styling Guidelines
+
+## NuxtUI Components
+- Prefer NuxtUI 4 components over custom implementations
+- Use built-in components: `UButton`, `UCard`, `UInput`, `UModal`, etc.
+- Leverage NuxtUI's theming and customization options
+- Follow NuxtUI's component API and props
+
+## Tailwind CSS
+- Use Tailwind CSS v4 for styling
+- Implement mobile-first responsive design
+- Use utility classes for custom styling
+- Follow Tailwind's design system principles
+
+## Responsive Design
+- Use mobile-first approach with Tailwind breakpoints
+- Implement proper responsive layouts
+- Test on multiple screen sizes
+- Use Tailwind's responsive utilities
+
+## Accessibility
+- Ensure components are accessible by default
+- Use proper ARIA attributes
+- Implement keyboard navigation
+- Test with screen readers
+- Follow WCAG guidelines
+
+## Performance
+- Optimize images: use WebP format, include size data
+- Implement lazy loading for images and components
+- Use Nuxt's built-in image optimization
+- Minimize CSS bundle size
+
+## Custom Styling
+- Use CSS custom properties for theming
+- Implement consistent design tokens
+- Use Tailwind's @apply directive sparingly
+- Keep custom CSS minimal and focused

@@ -1,0 +1,51 @@
+---
+description: Code quality standards and best practices
+globs: ["**/*.ts", "**/*.vue"]
+alwaysApply: false
+---
+
+# Code Quality Standards
+
+## ESLint and Prettier
+- All code must pass ESLint and Prettier checks
+- Follow @antfu/eslint-config rules
+- Use single quotes, no semicolons, trailing commas
+- Fix linting errors before committing
+
+## TypeScript Best Practices
+- Use TypeScript for all code
+- Prefer types over interfaces
+- Avoid enums; use const objects instead
+- Use proper type annotations
+- Leverage TypeScript's strict mode
+
+## Code Style
+- Write concise, technical TypeScript code
+- Use descriptive variable names with auxiliary verbs (e.g., `isLoading`, `hasError`)
+- Prefer iteration and modularization over code duplication
+- Use arrow functions for methods and computed properties
+- Avoid unnecessary curly braces in conditionals
+
+## Error Handling
+- Implement proper error handling
+- Use try-catch blocks for async operations
+- Provide meaningful error messages
+- Handle edge cases and validation
+
+## Documentation
+- Add JSDoc comments for complex functions
+- Write self-documenting code
+- Use clear and descriptive variable names
+- Document public APIs and interfaces
+
+## Git Workflow
+- Code is automatically formatted and linted on save
+- Git hooks ensure code quality before commits
+- Use conventional commit messages
+- Keep commits focused and atomic
+
+## Performance
+- Optimize for Core Web Vitals
+- Use lazy loading and code splitting
+- Minimize bundle size
+- Implement proper caching strategies
