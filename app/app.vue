@@ -1,6 +1,4 @@
-<script setup lang="ts">
-var count = ref(0)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <UApp>

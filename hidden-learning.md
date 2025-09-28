@@ -49,3 +49,11 @@ Explain UApp used in @app.vue , why do I need to use it at the app level?
 # add a specific version of prettier
 pnpm add --save-dev --save-exact prettier
 ```
+
+## ## setup Husky
+
+```sh
+pnpm add -D husky lint-staged
+
+pnpm exec husky init
+```
