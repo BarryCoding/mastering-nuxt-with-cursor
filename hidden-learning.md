@@ -40,4 +40,11 @@ Explain UApp used in @app.vue , why do I need to use it at the app level?
 
 ## setup eslint manually
 
-- [install eslint manually with recipe](https://eslint.nuxt.com/packages/module#manual-setup) 
+- [install eslint manually with recipe](https://eslint.nuxt.com/packages/module#manual-setup)
+
+## setup Prettier and editorconfig
+
+```sh
+# add a specific version of prettier
+pnpm add --save-dev --save-exact prettier
+```
