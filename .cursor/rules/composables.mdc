@@ -1,0 +1,47 @@
+---
+description: Vue Composables
+globs: **/use*.ts
+alwaysApply: false
+---
+# Vue Composables Guidelines
+
+## Naming and Structure
+- Use camelCase for composable names (e.g., `useAuthState.ts`)
+- Prefix composables with `use` (e.g., `useUserData`, `useApiClient`)
+- Keep composables focused and single-purpose
+- Export composables from `composables/` directory for auto-imports
+
+## TypeScript Best Practices
+- Use TypeScript for all composables
+- Define proper return types for composable functions
+- Use generic types when appropriate for reusability
+- Leverage VueUse for common utility composables
+
+## State Management
+- Use `ref` for exclusively for primitive and object state
+- Use `computed` for derived state
+- Use `watch` and `watchEffect` for side effects
+
+## Common Patterns
+- Return reactive state and methods as an object
+- Use `readonly` when exposing state that shouldn't be mutated
+- Implement proper cleanup in `onUnmounted` when needed
+- Use `provide/inject` for dependency injection
+
+## Example Structure
+```typescript
+export function useExample() {
+  const state = ref(initialValue)
+  const computed = computed(() => state.value * 2)
+
+  const method = () => {
+    // implementation
+  }
+
+  return {
+    state: readonly(state),
+    computed,
+    method
+  }
+}
+```

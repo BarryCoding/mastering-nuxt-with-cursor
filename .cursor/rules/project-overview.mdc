@@ -1,0 +1,23 @@
+---
+description: Project overview and core technologies
+alwaysApply: true
+---
+
+# Mastering Nuxt with Cursor
+
+This is a comprehensive Nuxt 4 learning project focused on mastering modern Vue.js development with Cursor AI assistance.
+
+## Core Technologies
+- **Framework**: Nuxt 4 with Vue 3 Composition API
+- **UI Library**: NuxtUI v4 with Tailwind CSS v4
+- **Language**: TypeScript-first approach
+- **Package Manager**: pnpm
+- **Code Quality**: ESLint (@antfu/eslint-config) + Prettier
+- **Git Hooks**: Husky + lint-staged
+
+## Development Philosophy
+- **TypeScript-first**: All code should be written in TypeScript
+- **Composition API**: Use Vue 3 Composition API exclusively
+- **Component-driven**: Build reusable, composable components
+- **Performance-focused**: Optimize for Core Web Vitals
+- **Accessibility**: Ensure components are accessible by default

@@ -1,0 +1,42 @@
+---
+description: AI assistance preferences and guidelines
+alwaysApply: true
+---
+
+# AI Assistance Guidelines
+
+## Code Generation
+- Provide code examples that follow project conventions
+- Use TypeScript-first approach with proper types
+- Follow Nuxt 4 and Vue 3 best practices
+- Implement proper error handling and validation
+
+## Suggestions and Improvements
+- Suggest improvements for performance and accessibility
+- Recommend best practices for Vue 3 and TypeScript
+- Help with debugging and optimization
+- Provide modern, up-to-date solutions
+
+## Learning Focus
+- Explain Nuxt-specific concepts and patterns
+- Demonstrate Vue 3 Composition API patterns
+- Show TypeScript integration with Vue
+- Provide examples of performance optimization techniques
+
+## Code Review
+- Review code for adherence to project standards
+- Suggest refactoring opportunities
+- Identify potential performance issues
+- Ensure accessibility compliance
+
+## Documentation
+- Help create clear and comprehensive documentation
+- Explain complex concepts with examples
+- Provide step-by-step implementation guides
+- Create learning materials and tutorials
+
+## Problem Solving
+- Help debug issues with detailed explanations
+- Provide multiple solution approaches
+- Explain the reasoning behind recommendations
+- Guide through troubleshooting steps

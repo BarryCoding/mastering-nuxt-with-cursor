@@ -1,0 +1,51 @@
+---
+description: Nuxt 4 specific features and patterns
+globs: ["**/pages/**/*", "**/layouts/**/*", "**/middleware/**/*", "**/plugins/**/*", "**/server/**/*"]
+alwaysApply: false
+---
+
+# Nuxt 4 Specific Guidelines
+
+## Directory Structure
+Follow Nuxt 4's app/ directory structure:
+```
+app/
+├── app.vue                 # Root component with UApp wrapper
+├── assets/css/main.css     # Global styles (Tailwind + NuxtUI)
+├── components/             # Reusable Vue components
+├── composables/            # Vue composables
+├── layouts/                # Layout components
+├── middleware/             # Route middleware
+├── pages/                  # File-based routing
+├── plugins/                # Nuxt plugins
+└── server/                 # Server-side code
+```
+
+## Data Fetching
+- Use `useFetch` and `useAsyncData` for data fetching
+- Leverage Nuxt's built-in caching and hydration
+- Use `$fetch` for programmatic API calls
+- Implement proper error handling and loading states
+
+## SEO and Meta
+- Use `useHead` and `useSeoMeta` for SEO optimization
+- Implement proper meta tags and structured data
+- Use Nuxt's built-in SEO features
+
+## Routing
+- Use file-based routing for pages
+- Implement route middleware for authentication and guards
+- Use dynamic routes with proper parameter validation
+- Leverage Nuxt's built-in routing features
+
+## Server-Side Features
+- Use server routes in `server/api/` directory
+- Implement proper error handling and validation
+- Use Nuxt's built-in server utilities
+- Leverage server-side rendering capabilities
+
+## Performance Optimization
+- Use `Suspense` for asynchronous components
+- Implement lazy loading for routes and components
+- Use Nuxt's built-in image optimization with `<NuxtImg>`
+- Optimize for Core Web Vitals (LCP, CLS, FID)
