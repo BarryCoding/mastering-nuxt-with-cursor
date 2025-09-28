@@ -1,6 +1,8 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>
+  <UApp>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+    <UButton>Click me!</UButton>
+  </UApp>
 </template>
