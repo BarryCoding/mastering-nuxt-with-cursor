@@ -37,3 +37,7 @@ pnpm add -D tailwindcss
 # cursor chat ask
 Explain UApp used in @app.vue , why do I need to use it at the app level?
 ```
+
+## setup eslint manually
+
+- [install eslint manually with recipe](https://eslint.nuxt.com/packages/module#manual-setup) 

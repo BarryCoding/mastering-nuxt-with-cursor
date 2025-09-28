@@ -1,3 +1,7 @@
+<script setup lang="ts">
+var count = ref(0)
+</script>
+
 <template>
   <UApp>
     <NuxtRouteAnnouncer />
