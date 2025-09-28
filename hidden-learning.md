@@ -35,6 +35,7 @@ pnpm add -D tailwindcss
 
 ```md
 # cursor chat ask
+
 Explain UApp used in @app.vue , why do I need to use it at the app level?
 ```
 
