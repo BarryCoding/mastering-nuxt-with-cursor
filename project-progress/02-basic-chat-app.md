@@ -35,3 +35,27 @@ Implemented Vue 3 Composition API composable for managing chat state and functio
 - **Reactive state**: Uses `ref()` for chat data and `computed()` for derived messages
 - **Message handling**: Functions to create and send messages with role-based content
 - **Mock responses**: Simulated assistant responses with 200ms delay
+
+## 02-04: Components ChatInput and ChatWindow
+
+Implemented complete Vue 3 component architecture for chat interface with reusable components and simplified page structure following Composition API best practices.
+
+**Key Features:**
+
+- **ChatInput Component (NEW)**: `<script setup lang="ts">` with TypeScript interfaces for props and emits
+- **Dynamic textarea**: Auto-resizing textarea using `scrollHeight` with focus management via `useTemplateRef`
+- **Advanced focus handling**: Automatic focus on mount and after streaming completes using `watch()` and `nextTick()`
+- **Message validation**: Empty message prevention with trimmed input validation and form submission
+- **Keyboard navigation**: Enter key submission prevention with `@keydown.enter.exact.prevent`
+- **Accessibility**: ARIA labels, proper form structure, and keyboard interaction patterns
+- **NuxtUI integration**: `UButton` with solid variant, heroicon, and proper disabled states
+- **Rounded styling**: Custom CSS with 1.8rem border-radius using NuxtUI CSS variables
+- **ChatWindow Component (NEW)**: Main chat interface consuming `useChat()` composable
+- **Conditional rendering**: Empty state with centered card vs active chat with message list
+- **Responsive message layout**: User messages (70% width, right-aligned) vs assistant messages (full width)
+- **Fixed bottom input**: Positioned input form with scrollable message container above
+- **Empty state design**: Clean onboarding with elevated background card and centered title
+- **Component composition**: Event-driven communication pattern with emit handlers
+- **Organized CSS architecture**: Sections for layout, messages, forms, empty state, and utilities
+- **Cross-browser scrollbar**: Hidden scrollbars using multiple vendor prefixes
+- **Simplified chat.vue**: Reduced from placeholder `<h1>` to single `<ChatWindow />` component
