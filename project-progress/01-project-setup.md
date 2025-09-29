@@ -1,8 +1,6 @@
-# Project Progress
+# 01-project-setup
 
-## 01-project-setup
-
-### 01-01: hidden-learning
+## 01-01: hidden-learning
 
 This commit established the foundation documentation for the project setup process. The file serves as a comprehensive guide covering:
 
@@ -26,7 +24,7 @@ nvm use --lts
 node -v > .nvmrc
 ```
 
-### 01-02: add vscode extensions and settings
+## 01-02: add vscode extensions and settings
 
 Configured the development environment with essential VS Code extensions and workspace settings.
 
@@ -51,13 +49,13 @@ Configured the development environment with essential VS Code extensions and wor
 - Tailwind CSS IntelliSense
 - ESLint
 
-### 01-03: try some cursor rules
+## 01-03: try some cursor rules
 
 **File Added:**
 
 - `.cursor/rules/nuxt.mdc` - Cursor AI rules for Nuxt 4 development
 
-### 01-04: setup NuxtUI v4(with tailwind)
+## 01-04: setup NuxtUI v4(with tailwind)
 
 ```sh
 # Install NuxtUI v4 with Tailwind
@@ -82,7 +80,7 @@ Integrated NuxtUI v4 and Tailwind CSS into the project.
 - Custom Tailwind class attributes for Nuxt UI components
 - Experimental class regex for better IntelliSense
 
-### 01-05: setup ESLint with recipes
+## 01-05: setup ESLint with recipes
 
 ```sh
 pnpm add -D @antfu/eslint-config @nuxt/eslint
@@ -105,7 +103,7 @@ Configured ESLint using Nuxt's recommended setup with @antfu/eslint-config.
 - Enables ESLint checker in development
 - Standalone configuration for better performance
 
-### 01-06: setup basic prettier and editor config
+## 01-06: setup basic prettier and editor config
 
 ```sh
 pnpm add --save-dev --save-exact prettier
@@ -126,7 +124,7 @@ Added Prettier configuration and EditorConfig for consistent code formatting.
 - 2-space indentation
 - UTF-8 encoding and LF line endings
 
-### 01-07: setup ESLint Prettier auto fix when save
+## 01-07: setup ESLint Prettier auto fix when save
 
 Enhanced VS Code settings to automatically fix ESLint issues and format code on save.
 
@@ -137,7 +135,7 @@ Enhanced VS Code settings to automatically fix ESLint issues and format code on 
 - Seamless integration between ESLint and Prettier
 - Improved developer experience with automatic code quality
 
-### 01-08: setup husky and lint-staged
+## 01-08: setup husky and lint-staged
 
 ```sh
 pnpm add -D husky lint-staged
@@ -160,7 +158,7 @@ Implemented Git hooks to ensure code quality before commits.
 - Formats code with Prettier before commit
 - Ensures consistent code quality across the team
 
-### 01-09: improve cursor rules
+## 01-09: improve cursor rules
 
 Comprehensive refactoring of Cursor AI rules to improve development experience and code quality guidance.
 
@@ -195,7 +193,7 @@ Comprehensive refactoring of Cursor AI rules to improve development experience a
 - File-specific rules using glob patterns
 - Comprehensive ignore patterns for Cursor AI
 
-### 01-10: fix husky when commit
+## 01-10: fix husky when commit
 
 Fixed Husky pre-commit hook failing due to Node.js not being found in the Git hook environment.
 
@@ -227,9 +225,9 @@ Fixed Husky pre-commit hook failing due to Node.js not being found in the Git ho
 - Reliable pre-commit linting and formatting
 - Consistent Node version across development and Git hooks
 
-## other hidden config from commits
+# other hidden config from commits
 
-### Cursor AI Integration
+## Cursor AI Integration
 
 - Integrate [Nuxt UI MCP](https://ui.nuxt.com/docs/getting-started/ai/mcp#cursor) in Cursor
 - Reload/restart Cursor to activate MCP tools

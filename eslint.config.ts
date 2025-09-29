@@ -6,14 +6,10 @@ export default withNuxt(
     // ...@antfu/eslint-config options
   }),
 
-  // your custom flat configs go here, for example:
-  // {
-  //   files: ['**/*.ts', '**/*.tsx'],
-  //   rules: {
-  //     'no-console': 'off' // allow console.log in TypeScript files
-  //   }
-  // },
-  // {
-  //   ...
-  // }
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'vue/singleline-html-element-content-newline': 'off',
+    },
+  },
 )
