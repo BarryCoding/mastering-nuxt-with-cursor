@@ -22,3 +22,16 @@ Implemented Nuxt's layout system with `NuxtLayout` component and created a defau
 - **Default layout**: Automatically applied to all pages unless specified otherwise
 - **Slot-based**: Layouts use Vue slots to render page content
 - **CSS variables**: Uses NuxtUI CSS variables for consistent theming
+
+## 02-03: Composables useChat
+
+Implemented Vue 3 Composition API composable for managing chat state and functionality.
+
+**Key Features:**
+
+- **TypeScript interfaces**: Defined `Chat` and `ChatMessage` types for type safety
+- **Mock data**: Created sample chat messages and chat object for testing
+- **Composable function**: `useChat()` encapsulates chat logic and state management
+- **Reactive state**: Uses `ref()` for chat data and `computed()` for derived messages
+- **Message handling**: Functions to create and send messages with role-based content
+- **Mock responses**: Simulated assistant responses with 200ms delay
