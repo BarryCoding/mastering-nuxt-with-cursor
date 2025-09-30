@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { chat, chatMessages, sendMessage } = useChat()
+
+useHeadSafe({
+  title: chat.value.title,
+})
 </script>
 
 <template>

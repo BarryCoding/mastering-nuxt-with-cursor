@@ -85,3 +85,15 @@ Refactored component architecture to use proper props/emit pattern instead of di
 - **Separation of concerns**: Page component (`chat.vue`) manages state, ChatWindow handles presentation
 - **Component reusability**: ChatWindow can now be used with different data sources
 - **Parent-child pattern**: Follows Vue's recommended unidirectional data flow architecture
+
+## 02-07: Nuxt4 useHead and useHeadSafe
+
+Implemented Nuxt 4 head management with `useHead` and `useHeadSafe` for dynamic `<head>` updates and XSS protection.
+
+**Key Features:**
+
+- **Dynamic head management**: `useHead()` updates `<title>`, `<meta>`, `<link>`, and `<script>` tags reactively
+- **Vue reactivity**: Works with `ref()`, `computed()`, and `reactive()` for dynamic content
+- **Security**: `useHeadSafe()` restricts input to safe values for user-generated content
+- **XSS prevention**: Mitigates risks when head data comes from untrusted sources
+- **SSR/SPA**: Works in both server-side rendering and client-side hydration
