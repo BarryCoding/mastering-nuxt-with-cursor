@@ -73,3 +73,15 @@ Implemented Vue 3 Composition API composable for managing chat scroll behavior a
 - **Event management**: Scroll event listeners with proper cleanup in `onMounted`/`onUnmounted`
 - **Focus management**: Automatic textarea focus on mount and scroll position updates
 - **ChatWindow integration**: Provides scroll controls and button visibility for chat interface
+
+## 02-06: Refactor chat data flow
+
+Refactored component architecture to use proper props/emit pattern instead of direct composable consumption for better separation of concerns and reusability.
+
+**Key Features:**
+
+- **Props-based data flow**: ChatWindow now receives `chat` and `chatMessages` as props from parent
+- **Event-driven communication**: Uses `emit('sendMessage')` instead of direct `sendMessage()` call
+- **Separation of concerns**: Page component (`chat.vue`) manages state, ChatWindow handles presentation
+- **Component reusability**: ChatWindow can now be used with different data sources
+- **Parent-child pattern**: Follows Vue's recommended unidirectional data flow architecture

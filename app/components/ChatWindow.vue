@@ -1,13 +1,21 @@
 <script setup lang="ts">
-const { chat, chatMessages, sendMessage } = useChat()
+import type { Chat, ChatMessage } from '~/types'
+
+const props = defineProps<{
+  chatMessages: ChatMessage[] // TODO: it is an computed property from chat?
+  chat: Chat
+}>()
+
+const emit = defineEmits(['sendMessage'])
+
 const { showScrollButton, scrollToBottom, pinToBottom } = useChatScroll()
 
 function handleSendMessage(message: string) {
-  sendMessage(message)
+  emit('sendMessage', message)
 }
 
-// TODO: refactor this watch
-watch(() => chatMessages.value, pinToBottom, { deep: true })
+// TODO: refactor this watch?
+watch(() => props.chatMessages, pinToBottom, { deep: true })
 </script>
 
 <template>
