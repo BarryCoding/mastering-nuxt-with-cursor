@@ -59,3 +59,17 @@ Implemented complete Vue 3 component architecture for chat interface with reusab
 - **Organized CSS architecture**: Sections for layout, messages, forms, empty state, and utilities
 - **Cross-browser scrollbar**: Hidden scrollbars using multiple vendor prefixes
 - **Simplified chat.vue**: Reduced from placeholder `<h1>` to single `<ChatWindow />` component
+
+## 02-05: Composable useChatScroll
+
+Implemented Vue 3 Composition API composable for managing chat scroll behavior and auto-scrolling functionality.
+
+**Key Features:**
+
+- **Template refs**: Uses `useTemplateRef` for scroll container and textarea DOM access
+- **Scroll position tracking**: Reactive `isAtBottom` and `showScrollButton` state with 200px threshold
+- **Smooth scrolling**: Custom easing animation with `requestAnimationFrame` for 300ms duration
+- **Auto-pin functionality**: `pinToBottom()` maintains scroll position when new messages arrive
+- **Event management**: Scroll event listeners with proper cleanup in `onMounted`/`onUnmounted`
+- **Focus management**: Automatic textarea focus on mount and scroll position updates
+- **ChatWindow integration**: Provides scroll controls and button visibility for chat interface
