@@ -14,3 +14,16 @@ Implemented Nuxt 4 runtime configuration system for managing environment-specifi
 - **Client-side access**: Implemented runtime config consumption in `app.vue` for debugging and configuration display
 - **Environment variable support**: Foundation for overriding values with `NUXT_` prefixed environment variables
 - **Security separation**: Private keys remain server-only while public keys are safely exposed to client
+
+## 03-02: Nuxt 4 appConfig
+
+Implemented Nuxt 4 application configuration system for managing build-time, reactive, and public configuration values accessible throughout the application.
+
+**Key Features:**
+
+- **Application configuration**: Created `app/app.config.ts` using `defineAppConfig()` helper for build-time public configuration
+- **Public reactive values**: Defined application-level settings (`title: 'Nuxt Chat'`) accessible universally in both client and server contexts
+- **UI theming configuration**: Implemented nested configuration structure for NuxtUI theme customization (`ui.colors.primary: 'blue'`)
+- **useAppConfig composable**: Accessed configuration values using `useAppConfig()` in Vue components for reactive data consumption
+- **Dynamic page titles**: Integrated `appConfig.title` with `useHead()` composable in `/app/pages/chat.vue` for SEO-friendly page titles
+- **Security best practice**: Used for public, non-sensitive configuration values that can be safely exposed to the client

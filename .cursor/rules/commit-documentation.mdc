@@ -3,9 +3,9 @@ alwaysApply: false
 ---
 # Commit Documentation
 
-1. focus only on current changes or git staged content.
+1. analyze content from current git staged changes, if there's no staged changes, then use current file changes.
 2. mirror an existing format of content if provided
-3. read latest or specific documentation on framework or library for reference.
+3. read latest or specific documentation on framework or library for reference, if user provide an topic to focus on.
 4. follow other user instructions if provided
 5. make the summary and the title of the topic/commit concise
 6. after the summary, review the changes of code, provide at most 3 advices to improve the current code.
