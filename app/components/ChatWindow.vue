@@ -8,7 +8,8 @@ const props = defineProps<{
 
 const emit = defineEmits(['sendMessage'])
 
-const { showScrollButton, scrollToBottom, pinToBottom } = useChatScroll()
+const { showScrollButton, scrollToBottom, pinToBottom, scrollContainer } =
+  useChatScroll()
 
 function handleSendMessage(message: string) {
   emit('sendMessage', message)
@@ -19,7 +20,7 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
 </script>
 
 <template>
-  <div class="scroll-container">
+  <div ref="scrollContainer" class="scroll-container">
     <UContainer class="chat-container">
       <div v-if="!chatMessages?.length" class="empty-state">
         <div class="empty-state-card">
