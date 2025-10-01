@@ -16,14 +16,17 @@ export default function useChat() {
     }
   }
 
-  function sendMessage(message: string) {
+  async function sendMessage(message: string) {
     chatMessages.value.push(createMessage(message, 'user'))
 
-    setTimeout(() => {
-      chatMessages.value.push(
-        createMessage(`You said: ${message}`, 'assistant'),
-      )
-    }, 200)
+    const data = await $fetch<ChatMessage>('/api/ai', {
+      method: 'POST',
+      body: {
+        messages: chatMessages.value,
+      },
+    })
+
+    chatMessages.value.push(data)
   }
 
   return {

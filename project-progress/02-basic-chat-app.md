@@ -97,3 +97,21 @@ Implemented Nuxt 4 head management with `useHead` and `useHeadSafe` for dynamic 
 - **Security**: `useHeadSafe()` restricts input to safe values for user-generated content
 - **XSS prevention**: Mitigates risks when head data comes from untrusted sources
 - **SSR/SPA**: Works in both server-side rendering and client-side hydration
+
+## 02-08: Server API routes integration
+
+Implemented Nuxt server API routes to replace mock data with real server-side request handling using `$fetch` and `defineEventHandler`.
+
+**Key Features:**
+
+- **Server API endpoint**: Created `/server/api/ai.ts` with `defineEventHandler` for server-side request handling
+- **Request body parsing**: Uses `readBody()` to extract messages from POST request body
+- **Real-time communication**: Replaced 200ms mock delay with actual HTTP POST request to `/api/ai`
+- **$fetch integration**: Universal fetch wrapper automatically handles SSR and client-side requests
+- **Type-safe responses**: Typed `$fetch<ChatMessage>` ensures response matches expected interface
+
+### Code Improvement Recommendations:
+
+1. **Error handling**: Add try-catch blocks in `sendMessage()` to handle network failures and show user-friendly error messages
+2. **Loading states**: Consider adding a loading indicator while waiting for the server response to improve UX
+3. **Server validation**: Add input validation in the API route to ensure messages array is not empty and contains valid message objects
