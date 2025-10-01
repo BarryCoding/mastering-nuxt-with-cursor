@@ -5,6 +5,10 @@ export default defineEventHandler(async (event) => {
   const id = messages.length.toString()
   const lastMessage = messages[messages.length - 1]
 
+  // Test runtimeConfig in server mode
+  // const runtimeConfig = useRuntimeConfig()
+  // console.warn(`🤖 ~ server/api/ai.ts runtimeConfig:`, runtimeConfig)
+
   return {
     id,
     role: 'assistant',

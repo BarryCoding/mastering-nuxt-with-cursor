@@ -13,4 +13,11 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  runtimeConfig: {
+    openaiApiKey: 'runtimeConfigOpenaiApiKey',
+    public: {
+      test: 'runtimeConfigTest',
+    },
+  },
 })
