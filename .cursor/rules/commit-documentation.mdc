@@ -1,0 +1,13 @@
+---
+alwaysApply: false
+---
+# Commit Documentation
+
+1. focus only on current changes or git staged content.
+2. mirror an existing format of content if provided
+3. read latest or specific documentation on framework or library for reference.
+4. follow other user instructions if provided
+5. make the summary and the title of the topic/commit concise
+6. after the summary, review the changes of code, provide at most 3 advices to improve the current code.
+7. include a "Next Steps" or "Future Enhancements" section to guide readers on potential improvements or upcoming features related to the current changes.
+8. provide one advice to improve this documentation rule, if the user provided an good instruction practice.

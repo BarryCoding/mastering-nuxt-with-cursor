@@ -3,17 +3,24 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
   antfu({
-    // ...@antfu/eslint-config options
+    // antfu rules
+    rules: {
+      'antfu/if-newline': 'off',
+    },
   }),
 
-  // your custom flat configs go here, for example:
-  // {
-  //   files: ['**/*.ts', '**/*.tsx'],
-  //   rules: {
-  //     'no-console': 'off' // allow console.log in TypeScript files
-  //   }
-  // },
-  // {
-  //   ...
-  // }
+  // vue rules
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'vue/singleline-html-element-content-newline': 'off',
+    },
+  },
+
+  // style rules
+  {
+    rules: {
+      'style/operator-linebreak': 'off',
+    },
+  },
 )
