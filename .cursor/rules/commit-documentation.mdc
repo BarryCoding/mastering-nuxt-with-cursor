@@ -3,11 +3,58 @@ alwaysApply: false
 ---
 # Commit Documentation
 
-1. analyze content from current git staged changes, if there's no staged changes, then use current file changes.
-2. mirror an existing format of content if provided
-3. read latest or specific documentation on framework or library for reference, if user provide an topic to focus on.
-4. follow other user instructions if provided
-5. make the summary and the title of the topic/commit concise
-6. after the summary, review the changes of code, provide at most 3 advices to improve the current code.
-7. include a "Next Steps" or "Future Enhancements" section to guide readers on potential improvements or upcoming features related to the current changes.
-8. provide one advice to improve this documentation rule, if the user provided an good instruction practice.
+## Preparation & Analysis
+
+1. **Analyze Changes**: Examine content from current git staged changes. If there are no staged changes, use current file changes instead.
+2. **Reference Documentation**: Read the latest or specific documentation on the framework or library for reference, especially if the user provides a topic to focus on.
+3. **Follow Instructions**: Adhere to any additional user instructions provided.
+
+## Documentation Structure
+
+4. **Mirror Format**: Mirror an existing format of content if provided to maintain consistency across documentation.
+5. **Concise Titles**: Make the summary and title of the topic/commit concise yet descriptive.
+
+## Code Review & Recommendations
+
+6. **Code Improvements**: After the summary, review the changes of code and provide at most 3 practical advices to improve the current code.
+   - Focus on: security, performance, type safety, best practices, and maintainability
+   - Use clear indicators: ✅ for strengths, ⚠️ for considerations, ❌ for issues
+
+## Future Planning
+
+7. **Next Steps Section**: Include a "Next Steps" or "Future Enhancements" section to guide readers on potential improvements or upcoming features related to the current changes.
+   - Provide at most 3 actionable steps
+   - Order by priority or logical progression
+   - Include both technical and documentation enhancements
+
+## Feature Comparison Documentation
+
+8. **Comparison Structure**: Do the comparison only when user provide clear instruction on what to compare. And when comparing features, APIs, or architectural patterns, include:
+   - **Comparison Table**: Side-by-side table with key differentiators (10-15 rows)
+   - **When to Use Guidelines**: Separate sections for each option with 5-6 specific use cases
+   - **Code Examples**: Practical, real-world code snippets demonstrating both approaches
+   - **Decision Matrix**: Quick checklist format to help developers choose the right option
+   - **Real-world Context**: Reference actual implementation examples from the codebase
+
+   Example structure:
+   ```markdown
+   ### Key Differences Table
+   | Feature | Option A | Option B |
+
+   ### When to Use Option A
+   1. Specific scenario with explanation
+
+   ### When to Use Option B
+   1. Specific scenario with explanation
+
+   ### Decision Matrix
+   **Choose Option A if:**
+   - ✅ Criterion 1
+
+   **Choose Option B if:**
+   - ✅ Criterion 1
+   ```
+
+## Meta-Improvement
+
+9. **Rule Enhancement**: Provide one advice to improve this documentation rule itself, if the user has demonstrated a good instruction practice or workflow that should be incorporated.
