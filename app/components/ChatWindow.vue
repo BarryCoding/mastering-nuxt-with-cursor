@@ -47,7 +47,7 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
             }"
           >
             <div class="message-content">
-              {{ message.content }}
+              <ChatMDC :content="message.content" />
             </div>
           </div>
 
