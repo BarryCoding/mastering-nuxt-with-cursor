@@ -21,6 +21,7 @@ export default withNuxt(
   {
     rules: {
       'style/operator-linebreak': 'off',
+      'style/brace-style': 'off',
     },
   },
 )
