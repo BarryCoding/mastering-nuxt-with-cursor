@@ -69,3 +69,9 @@ Implemented markdown content rendering using Nuxt MDC (Markdown Components) to e
 - **NuxtUI Integration**: Used NuxtUI CSS custom properties for consistent theming (`--ui-text-highlighted`, `--ui-bg-inverted`, `--ui-primary`)
 - **Component Integration**: Updated `ChatWindow.vue` to use `ChatMDC` component instead of plain text rendering for AI messages
 - **Responsive Design**: Added proper spacing, typography, and responsive image handling for optimal display across devices
+
+## Deployment
+
+- Netlify failed as api/ai will not work
+- Vercel just works?! api/ai works out of the box!
+- ...
