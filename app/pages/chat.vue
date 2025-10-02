@@ -8,9 +8,22 @@ const title = computed(() =>
     : appConfig.title,
 )
 
+const isTyping = ref(false)
+
+async function handleSendMessage(message: string) {
+  isTyping.value = true
+  await sendMessage(message)
+  isTyping.value = false
+}
+
 useHead({ title })
 </script>
 
 <template>
-  <ChatWindow :chat :chat-messages="chatMessages" @send-message="sendMessage" />
+  <ChatWindow
+    :is-typing="isTyping"
+    :chat
+    :chat-messages="chatMessages"
+    @send-message="handleSendMessage"
+  />
 </template>

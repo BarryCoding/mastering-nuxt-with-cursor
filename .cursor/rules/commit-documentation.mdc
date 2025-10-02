@@ -17,8 +17,8 @@ alwaysApply: false
 ## Code Review & Recommendations
 
 6. **Code Improvements**: After the summary, review the changes of code and provide less than 3 practical advices to improve the current code.
-   - Focus on: security, performance, type safety, best practices, and maintainability
-   - Use clear indicators: ⚠️ for considerations, ❌ for issues
+   - Focus on: security, performance, type safety, best practices, and maintainability problems.
+   - Don't repeat current strengths, use clear problem indicators: ⚠️ for considerations, ❌ for issues
 
 ## Future Planning
 

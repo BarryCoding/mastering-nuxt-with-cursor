@@ -4,6 +4,7 @@ import type { Chat, ChatMessage } from '~/types'
 const props = defineProps<{
   chatMessages: ChatMessage[] // TODO: it is an computed property from chat?
   chat: Chat
+  isTyping: boolean
 }>()
 
 const emit = defineEmits(['sendMessage'])
@@ -49,6 +50,8 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
               {{ message.content }}
             </div>
           </div>
+
+          <span v-if="isTyping" class="typing-indicator"> &#9611; </span>
         </div>
 
         <div class="message-form-container">
@@ -133,6 +136,12 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
   word-wrap: break-word;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+}
+
+.typing-indicator {
+  display: inline-block;
+  animation: pulse 1s infinite;
+  margin-left: 0.25rem;
 }
 
 /* ===== Input Form Styles ===== */
