@@ -88,6 +88,7 @@ export default function useChatScroll() {
   })
 
   return {
+    scrollContainer,
     isAtBottom,
     showScrollButton,
     scrollToBottom,

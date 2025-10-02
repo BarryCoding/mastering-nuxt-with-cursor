@@ -4,11 +4,13 @@ import type { Chat, ChatMessage } from '~/types'
 const props = defineProps<{
   chatMessages: ChatMessage[] // TODO: it is an computed property from chat?
   chat: Chat
+  isTyping: boolean
 }>()
 
 const emit = defineEmits(['sendMessage'])
 
-const { showScrollButton, scrollToBottom, pinToBottom } = useChatScroll()
+const { showScrollButton, scrollToBottom, pinToBottom, scrollContainer } =
+  useChatScroll()
 
 function handleSendMessage(message: string) {
   emit('sendMessage', message)
@@ -19,7 +21,7 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
 </script>
 
 <template>
-  <div class="scroll-container">
+  <div ref="scrollContainer" class="scroll-container">
     <UContainer class="chat-container">
       <div v-if="!chatMessages?.length" class="empty-state">
         <div class="empty-state-card">
@@ -45,9 +47,11 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
             }"
           >
             <div class="message-content">
-              {{ message.content }}
+              <ChatMDC :content="message.content" />
             </div>
           </div>
+
+          <span v-if="isTyping" class="typing-indicator"> &#9611; </span>
         </div>
 
         <div class="message-form-container">
@@ -132,6 +136,12 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
   word-wrap: break-word;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+}
+
+.typing-indicator {
+  display: inline-block;
+  animation: pulse 1s infinite;
+  margin-left: 0.25rem;
 }
 
 /* ===== Input Form Styles ===== */
