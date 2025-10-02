@@ -12,20 +12,19 @@ alwaysApply: false
 ## Documentation Structure
 
 4. **Mirror Format**: Mirror an existing format of content if provided to maintain consistency across documentation.
-5. **Concise Titles**: Make the summary and title of the topic/commit concise yet descriptive.
+5. **Concise Titles and Content**: Make the summary and title of the topic/commit concise yet descriptive, don't copy code from current changes.
 
 ## Code Review & Recommendations
 
-6. **Code Improvements**: After the summary, review the changes of code and provide at most 3 practical advices to improve the current code.
+6. **Code Improvements**: After the summary, review the changes of code and provide less than 3 practical advices to improve the current code.
    - Focus on: security, performance, type safety, best practices, and maintainability
-   - Use clear indicators: ✅ for strengths, ⚠️ for considerations, ❌ for issues
+   - Use clear indicators: ⚠️ for considerations, ❌ for issues
 
 ## Future Planning
 
 7. **Next Steps Section**: Include a "Next Steps" or "Future Enhancements" section to guide readers on potential improvements or upcoming features related to the current changes.
-   - Provide at most 3 actionable steps
+   - Provide less than 3 actionable steps
    - Order by priority or logical progression
-   - Include both technical and documentation enhancements
 
 ## Feature Comparison Documentation
 
