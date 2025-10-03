@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { id } = useRoute().params
+console.warn(`🤖 ~ id:`, id)
+
 const appConfig = useAppConfig()
 const { chat, chatMessages, sendMessage } = useChat()
 

@@ -1,5 +1,6 @@
 <template>
   <div class="h-[calc(100vh-4rem)] bg-[var(--ui-bg)]">
+    <AppHeader />
     <main class="mt-16 h-full">
       <slot />
     </main>
