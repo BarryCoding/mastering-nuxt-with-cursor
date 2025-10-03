@@ -4,6 +4,10 @@ const { id } = useRoute().params
 const appConfig = useAppConfig()
 const { chat, chatMessages, sendMessage } = useChat(id as string)
 
+if (!chat.value) {
+  await navigateTo('/', { replace: true })
+}
+
 const title = computed(() =>
   chat.value?.title
     ? `${chat.value.title} - ${appConfig.title}`
