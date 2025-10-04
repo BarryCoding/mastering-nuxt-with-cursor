@@ -58,3 +58,15 @@ Implemented a responsive sidebar navigation system with toggle functionality and
 **Code Improvements:**
 
 - use NuxtUI4 Drawer component
+
+### UNavigationMenu
+
+**Summary:** Replaced custom navigation links with NuxtUI's UNavigationMenu component for enhanced chat sidebar navigation, providing better accessibility, consistent styling, and improved user experience.
+
+**Implementation Details:**
+
+- **Component Migration**: Replaced manual NuxtLink implementation with UNavigationMenu component using vertical orientation for sidebar layout
+- **Dynamic Data Transformation**: Created `formatChatItem()` function to transform Chat objects into NavigationMenuItem format with proper label, route, and active state mapping
+- **Reactive State Management**: Implemented computed property `formattedChats` for reactive chat list updates with automatic re-rendering when chat data changes
+- **Active State Management**: Enhanced active state detection using `route.params.id === chat.id` for precise current chat highlighting
+- **Accessibility Enhancement**: Leveraged UNavigationMenu's built-in accessibility features including ARIA attributes and keyboard navigation support
