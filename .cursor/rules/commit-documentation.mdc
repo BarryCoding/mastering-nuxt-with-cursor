@@ -6,7 +6,7 @@ alwaysApply: false
 ## Preparation & Analysis
 
 1. **Analyze Changes**: Examine content from current git staged changes. If there are no staged changes, use current file changes instead.
-2. **Reference Documentation**: Read the latest or specific documentation on the framework or library for reference, especially if the user provides a topic to focus on.
+2. **Reference Documentation**: Read the latest or specific documentation on the framework or library for reference by using Context 7 MCP, especially if the user provides a topic to focus on.
 3. **Follow Instructions**: Adhere to any additional user instructions provided.
 
 ## Documentation Structure

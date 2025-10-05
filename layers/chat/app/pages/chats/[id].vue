@@ -1,6 +1,12 @@
 <script setup lang="ts">
+const { id } = useRoute().params
+
 const appConfig = useAppConfig()
-const { chat, chatMessages, sendMessage } = useChat()
+const { chat, chatMessages, sendMessage } = useChat(id as string)
+
+if (!chat.value) {
+  await navigateTo('/', { replace: true })
+}
 
 const title = computed(() =>
   chat.value?.title
@@ -21,6 +27,7 @@ useHead({ title })
 
 <template>
   <ChatWindow
+    v-if="chat"
     :is-typing="isTyping"
     :chat
     :chat-messages="chatMessages"

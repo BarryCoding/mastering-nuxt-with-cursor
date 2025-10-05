@@ -1,8 +1,10 @@
 export default defineAppConfig({
   title: 'Nuxt Chat',
   ui: {
-    colors: {
-      primary: 'blue',
+    button: {
+      slots: {
+        base: 'cursor-pointer',
+      },
     },
   },
 })
