@@ -16,5 +16,10 @@ export default function useProjects() {
     return project
   }
 
-  return { projects, createProject }
+  function createProjectAndNavigate() {
+    const project = createProject()
+    navigateTo(`/projects/${project.id}`)
+  }
+
+  return { projects, createProject, createProjectAndNavigate }
 }
