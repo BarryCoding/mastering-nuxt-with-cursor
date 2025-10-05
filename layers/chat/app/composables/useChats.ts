@@ -1,5 +1,5 @@
 import type { Chat } from '../types'
-import { MOCK_CHAT } from '~/mocks/data'
+import { MOCK_CHAT } from '~~/layers/chat/app/mocks/data'
 
 interface CreateChatOptions {
   projectId?: string

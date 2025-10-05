@@ -1,4 +1,4 @@
-import type { Chat, ChatMessage, Project } from '~/types'
+import type { Chat, ChatMessage, Project } from '~~/layers/chat/app/types'
 
 export const MOCK_MESSAGES: ChatMessage[] = [
   {

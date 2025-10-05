@@ -113,3 +113,46 @@ Implemented comprehensive theme customization using Nuxt UI 4's advanced theming
 - **Semantic Color System**: Established semantic color tokens (`--ui-primary`, `--ui-bg`, `--ui-text`, etc.) for theme-agnostic component styling with automatic dark/light mode support
 - **Component Theme Override**: Configured global button component styling through `app.config.ts` with cursor pointer enhancement for improved user interaction feedback
 - **Design Token Architecture**: Implemented portable and maintainable theme system using CSS custom properties for easy customization and theme switching capabilities
+
+## 04-10: Nuxt 4 Layer Architecture
+
+Implemented comprehensive Nuxt 4 layer architecture to organize the application into modular, reusable components with clear separation of concerns between base functionality and chat-specific features.
+
+**Key Features:**
+
+- **Layer-Based Project Structure**: Restructured the entire application into two distinct layers (`base` and `chat`) following Nuxt 4's layer architecture pattern for improved maintainability and modularity
+- **Base Layer Foundation**: Created `layers/base/` containing core application infrastructure including UI components (`AppHeader.vue`, `AppSidebar.vue`), layouts (`default.vue`), styling (`main.css`), and configuration (`app.config.ts`)
+- **Chat Layer Specialization**: Organized `layers/chat/` with chat-specific functionality including components (`ChatInput.vue`, `ChatWindow.vue`, `ChatMDC.vue`), composables (`useChat.ts`, `useChats.ts`, `useProject.ts`), pages, types, and server-side API endpoints
+- **Layer-Specific Configuration**: Implemented separate `nuxt.config.ts` files for each layer with specialized module configurations (`@nuxt/ui` for base layer, `@nuxtjs/mdc` for chat layer)
+- **Cross-Layer Type References**: Updated import statements to use layer-specific paths (`~~/layers/chat/app/types`) ensuring proper type resolution across layer boundaries
+- **Modular CSS Architecture**: Enhanced CSS with layer-aware source mapping using `@source '../../../../'` directive for proper asset resolution in layered structure
+
+### Layer Architecture Comparison
+
+| Feature                      | Monolithic Structure                        | Layer Architecture                                                |
+| ---------------------------- | ------------------------------------------- | ----------------------------------------------------------------- |
+| **File Organization**        | Single `app/` directory with mixed concerns | Separated `layers/base/` and `layers/chat/` with clear boundaries |
+| **Configuration Management** | Single `nuxt.config.ts` with all modules    | Layer-specific configs with specialized module loading            |
+| **Code Reusability**         | Tightly coupled components                  | Modular, reusable layer components                                |
+| **Development Workflow**     | Single codebase for all features            | Independent layer development and testing                         |
+| **Dependency Management**    | Global dependencies affect entire app       | Layer-specific dependencies with controlled sharing               |
+| **Type Safety**              | Mixed import patterns (`~/types`)           | Consistent layer-specific imports (`~~/layers/chat/app/types`)    |
+| **Build Optimization**       | Single bundle with all features             | Potential for layer-specific bundling and tree-shaking            |
+| **Testing Strategy**         | Monolithic test suites                      | Isolated layer testing with mock dependencies                     |
+| **Deployment Flexibility**   | All-or-nothing deployment                   | Potential for selective layer deployment                          |
+| **Maintenance Complexity**   | High coupling, difficult refactoring        | Low coupling, easier maintenance and updates                      |
+| **Team Collaboration**       | Shared codebase conflicts                   | Parallel layer development with clear ownership                   |
+| **Feature Isolation**        | Features mixed throughout codebase          | Clear feature boundaries within layers                            |
+| **Configuration Override**   | Manual configuration merging                | Automatic layer priority-based merging                            |
+| **Asset Management**         | Global asset resolution                     | Layer-aware asset resolution with `@source` directive             |
+| **Scalability**              | Limited by monolithic constraints           | Horizontal scaling through additional layers                      |
+
+### When to Use Layer Architecture
+
+**Choose Layer Architecture when:**
+
+- ✅ Building complex applications with distinct feature domains
+- ✅ Multiple teams working on different application areas
+- ✅ Need for modular deployment and independent feature development
+- ✅ Requirements for reusable application components across projects
+- ✅ Desire for clear separation of concerns and maintainable codebase

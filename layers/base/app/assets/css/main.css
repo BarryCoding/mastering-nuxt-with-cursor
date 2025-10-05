@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+/* source files in layers folder */
+@source '../../../../';
+
 @theme {
   --font-sans: Inter, system-ui, sans-serif;
 
