@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Chat, ChatMessage } from '~~/layers/chat/app/types'
-
 const props = defineProps<{
   chatMessages: ChatMessage[] // TODO: it is an computed property from chat?
   chat: Chat
