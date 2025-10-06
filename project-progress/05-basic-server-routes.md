@@ -55,3 +55,16 @@ Implemented dynamic server routes using Nuxt 4's bracket notation for parameteri
 - **AI Integration**: Connected OpenAI service with runtime configuration for automated message generation
 - **Message Generation Flow**: Created end-to-end workflow from chat history retrieval to AI response generation and message creation
 - **Error Handling**: Added proper validation for required chat ID parameter with structured error responses
+
+## 05-05: Send Data to Server
+
+### Summary
+
+Enhanced server API routes to accept and process dynamic data from client requests using Nuxt 4's `readBody()` utility.
+
+### Key Changes
+
+- **Dynamic Chat Creation**: Modified `/api/chats` POST endpoint to accept `title` and `projectId` from request body instead of using hardcoded values
+- **Message Creation Endpoint**: Implemented `/api/chats/[id]/messages` POST route for adding new messages to specific chats with dynamic content and role handling
+- **Request Body Processing**: Integrated `readBody(event)` for extracting JSON payloads from POST requests with proper async handling
+- **Parameter Extraction**: Combined `getRouterParams(event)` for dynamic route parameters with `readBody(event)` for request data processing
