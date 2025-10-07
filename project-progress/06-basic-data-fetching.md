@@ -39,3 +39,16 @@ This section demonstrates advanced Nuxt 4 `useState` patterns combined with data
 3. **SSR Hydration**: State is properly hydrated from server to client
 4. **Reactive Updates**: State changes trigger automatic UI updates
 5. **Manual State Control**: Direct state manipulation with `chats.value = chatsData.value`
+
+## 06-03: Chat Message Fetching
+
+### Summary
+
+This commit implements granular message fetching for individual chats using Nuxt 4's `useFetch` composable.
+
+### Changes Overview
+
+- **Enhanced useChat composable** with dedicated message fetching via `useFetch`
+- **Added fetchMessages function** for controlled message loading with status checking
+- **Updated sendMessage flow** to use proper API endpoints for message creation and AI generation
+- **Integrated message fetching** in chat page with top-level await for SSR compatibility

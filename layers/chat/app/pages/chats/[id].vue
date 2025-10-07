@@ -2,7 +2,9 @@
 const { id } = useRoute().params
 
 const appConfig = useAppConfig()
-const { chat, chatMessages, sendMessage } = useChat(id as string)
+const { chat, chatMessages, sendMessage, fetchMessages } = useChat(id as string)
+
+await fetchMessages()
 
 if (!chat.value) {
   await navigateTo('/', { replace: true })
