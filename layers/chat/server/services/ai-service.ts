@@ -24,3 +24,23 @@ export async function generateChatResponse(
 
   return response.text
 }
+
+export async function generateChatTitle(
+  model: LanguageModel,
+  firstMessage: string,
+): Promise<string> {
+  const response = await generateText({
+    model,
+    messages: [
+      {
+        role: 'system',
+        content: 'Summarize the message in 3 or less words.',
+      },
+      {
+        role: 'user',
+        content: firstMessage,
+      },
+    ],
+  })
+  return response.text
+}
