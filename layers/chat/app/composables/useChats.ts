@@ -5,7 +5,10 @@ interface CreateChatOptions {
 const defaultChatOptions: CreateChatOptions = {}
 
 export default function useChats() {
-  const chats = useState<Chat[]>('chats', () => [MOCK_CHAT])
+  const { data: chats, execute: fetchChats } = useFetch<Chat[]>('/api/chats', {
+    immediate: false,
+    default: () => [],
+  })
 
   function createChat(options = defaultChatOptions) {
     const id = (chats.value.length + 1).toString()
@@ -38,6 +41,7 @@ export default function useChats() {
 
   return {
     chats,
+    fetchChats,
     createChat,
     createChatAndNavigate,
     getChatsByProject,
