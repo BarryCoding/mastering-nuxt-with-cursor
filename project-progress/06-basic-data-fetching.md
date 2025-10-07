@@ -19,3 +19,23 @@ This commit introduces Nuxt 4's `useFetch` composable to replace static mock dat
 3. **Manual Execution**: `execute` function for controlled data fetching
 4. **Type Safety**: Full TypeScript integration with `Chat[]` generic
 5. **SSR Compatibility**: Works seamlessly in server-side rendering
+
+## 06-02: useState with Data Fetching
+
+### Summary
+
+This section demonstrates advanced Nuxt 4 `useState` patterns combined with data fetching to create reactive, persistent state management. The implementation shows how to bridge `useFetch` results with global state using `useState`, enabling seamless data synchronization across components while maintaining SSR compatibility.
+
+### Changes Overview
+
+- **Enhanced useChats composable** with `useState` for global chat state management
+- **Integrated useFetch with useState** for automatic data synchronization
+- **Implemented reactive data flow** between server data and client state
+
+### Nuxt 4 useState + Data Fetching Features Demonstrated
+
+1. **Global State Persistence**: `useState('chats', () => [])` maintains state across route changes
+2. **Data Synchronization**: Automatic sync between `useFetch` results and `useState` values
+3. **SSR Hydration**: State is properly hydrated from server to client
+4. **Reactive Updates**: State changes trigger automatic UI updates
+5. **Manual State Control**: Direct state manipulation with `chats.value = chatsData.value`
