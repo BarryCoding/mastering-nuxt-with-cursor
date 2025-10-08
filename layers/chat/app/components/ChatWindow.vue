@@ -75,8 +75,7 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
 .scroll-container {
   overflow-y: auto;
   box-sizing: border-box;
-  flex: 1 1 auto;
-  min-height: 0;
+  height: 100%;
 }
 
 .chat-container {
