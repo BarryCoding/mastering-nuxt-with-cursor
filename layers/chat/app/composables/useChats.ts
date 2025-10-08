@@ -1,30 +1,36 @@
 interface CreateChatOptions {
   projectId?: string
+  title?: string
 }
 
 const defaultChatOptions: CreateChatOptions = {}
 
 export default function useChats() {
-  const chats = useState<Chat[]>('chats', () => [MOCK_CHAT])
+  const chats = useState<Chat[]>('chats', () => [])
+  const { data: chatsData, execute } = useFetch<Chat[]>('/api/chats', {
+    immediate: false,
+    default: () => [],
+  })
 
-  function createChat(options = defaultChatOptions) {
-    const id = (chats.value.length + 1).toString()
-    const chat = {
-      id,
-      title: `Chat ${id}`,
-      messages: [],
-      projectId: options.projectId,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    }
+  async function fetchChats() {
+    await execute()
+    chats.value = chatsData.value
+  }
 
-    chats.value.push(chat)
-
-    return chat
+  async function createChat(options = defaultChatOptions) {
+    const newChat = await $fetch<Chat>('/api/chats', {
+      method: 'POST',
+      body: {
+        title: options.title,
+        projectId: options.projectId,
+      },
+    })
+    chats.value.push(newChat)
+    return newChat
   }
 
   async function createChatAndNavigate(options = defaultChatOptions) {
-    const chat = createChat(options)
+    const chat = await createChat(options)
     if (chat.projectId) {
       await navigateTo(`/projects/${chat.projectId}/chats/${chat.id}`)
     } else {
@@ -38,6 +44,7 @@ export default function useChats() {
 
   return {
     chats,
+    fetchChats,
     createChat,
     createChatAndNavigate,
     getChatsByProject,

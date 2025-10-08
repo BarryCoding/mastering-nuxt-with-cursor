@@ -1,7 +1,8 @@
 <script setup lang="ts">
-// Test runtimeConfig in client mode
-// const runtimeConfig = useRuntimeConfig()
-// console.warn(`🤖 ~ app.vue runtimeConfig:`, runtimeConfig)
+const { fetchChats } = useChats()
+const { fetchProjects } = useProjects()
+
+await Promise.all([fetchChats(), fetchProjects()])
 </script>
 
 <template>

@@ -16,6 +16,7 @@ defineProps<{ content: string }>()
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 .markdown-content p:last-child {

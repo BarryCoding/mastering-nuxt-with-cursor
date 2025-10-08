@@ -31,7 +31,7 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
       <template v-else>
         <div class="chat-header">
           <h1 class="title">
-            {{ chat?.title || 'Untitled Chat' }}
+            <TypewriterText :text="chat.title || 'Untitled Chat'" />
           </h1>
         </div>
         <div class="messages-container">
@@ -74,8 +74,8 @@ watch(() => props.chatMessages, pinToBottom, { deep: true })
 /* ===== Layout & Container Styles ===== */
 .scroll-container {
   overflow-y: auto;
-  height: 100%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .chat-container {

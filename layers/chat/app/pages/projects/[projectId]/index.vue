@@ -4,7 +4,7 @@ const projectId = route.params.projectId as string
 
 const { getChatsByProject } = useChats()
 
-const chats = getChatsByProject(projectId)
+const chats = computed(() => getChatsByProject(projectId))
 </script>
 
 <template>
