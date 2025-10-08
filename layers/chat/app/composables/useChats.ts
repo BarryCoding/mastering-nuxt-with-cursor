@@ -1,5 +1,6 @@
 interface CreateChatOptions {
   projectId?: string
+  title?: string
 }
 
 const defaultChatOptions: CreateChatOptions = {}
@@ -16,24 +17,20 @@ export default function useChats() {
     chats.value = chatsData.value
   }
 
-  function createChat(options = defaultChatOptions) {
-    const id = (chats.value.length + 1).toString()
-    const chat = {
-      id,
-      title: `Chat ${id}`,
-      messages: [],
-      projectId: options.projectId,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    }
-
-    chats.value.push(chat)
-
-    return chat
+  async function createChat(options = defaultChatOptions) {
+    const newChat = await $fetch<Chat>('/api/chats', {
+      method: 'POST',
+      body: {
+        title: options.title,
+        projectId: options.projectId,
+      },
+    })
+    chats.value.push(newChat)
+    return newChat
   }
 
   async function createChatAndNavigate(options = defaultChatOptions) {
-    const chat = createChat(options)
+    const chat = await createChat(options)
     if (chat.projectId) {
       await navigateTo(`/projects/${chat.projectId}/chats/${chat.id}`)
     } else {

@@ -52,3 +52,23 @@ This commit implements granular message fetching for individual chats using Nuxt
 - **Added fetchMessages function** for controlled message loading with status checking
 - **Updated sendMessage flow** to use proper API endpoints for message creation and AI generation
 - **Integrated message fetching** in chat page with top-level await for SSR compatibility
+
+## 06-04: Chat Title Typewriter Animation
+
+### Summary
+
+This commit implements automatic chat title generation using AI and adds a typewriter animation effect for displaying titles.
+
+### Changes Overview
+
+- **Created TypewriterText component** with Web Animations API for smooth character-by-character reveal
+- **Implemented automatic title generation** triggered on first message send
+
+### Key Features Demonstrated
+
+1. **Web Animations API Integration**: Leverages browser's native `element.animate()` for performant animations
+2. **Reactive Animation Triggers**: `watch` composable monitors text changes and triggers animation dynamically
+3. **Smart Timing**: Duration scales with text length (50ms per character) but caps at 1 second
+4. **CSS Clip-Path Animation**: Uses `clip-path: inset()` for a clean typewriter reveal effect
+5. **Conditional AI Generation**: Title only generates on first message to optimize API usage
+6. **Improved AI Prompting**: Enhanced system prompt for better title quality and consistency
