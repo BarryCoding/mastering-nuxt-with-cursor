@@ -72,3 +72,15 @@ This commit implements automatic chat title generation using AI and adds a typew
 4. **CSS Clip-Path Animation**: Uses `clip-path: inset()` for a clean typewriter reveal effect
 5. **Conditional AI Generation**: Title only generates on first message to optimize API usage
 6. **Improved AI Prompting**: Enhanced system prompt for better title quality and consistency
+
+## 06-05: Complete the Data Fetching
+
+### Summary
+
+This commit completes the data fetching implementation by integrating project management with API endpoints, implementing parallel data loading strategies, and fixing layout issues to achieve a fully functional, API-driven application state.
+
+### Changes Overview
+
+- **Integrated project fetching** with `useFetch` in `useProjects` composable
+- **Implemented parallel data loading** using `Promise.all()` for chats and projects
+- **Fixed layout constraints** using flexbox patterns for proper content scrolling
